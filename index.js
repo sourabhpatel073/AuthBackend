@@ -9,7 +9,9 @@ const cors = require("cors");
 const app = express();
 app.use(cors());
 app.use(express.json());
-
+app.use("/",(req,res)=>{
+res.send("hello")
+})
 app.use("/user", userRouter);
 app.use(auth);
 app.use("/notes", noteRouter);
